@@ -1,14 +1,17 @@
-import { getCharacters } from "@/app/characters/page";
+"use client"
 import { ChangeEvent, useState } from "react";
 import { CharactersInterface } from "@/app/model";
 import HomePage from "@/app/pages/homepage/page";
+import { getCharacters } from "@/app/characters/page";
 
-export default async function Search() {
+async function fetchCharacters() {
+  const characters: CharactersInterface[] = await getCharacters();
+  return characters;
+}
 
+export default function Search() {
   const [search, setSearch] = useState<string>("");
   const [filterCharacters, setFilterCharacters] = useState<CharactersInterface[]>([]);
-
-  const characters: CharactersInterface[] = await getCharacters(); // Assuming getCharacters is an async function
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -16,6 +19,8 @@ export default async function Search() {
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
+
+    const characters = await fetchCharacters();
 
     const filteredResults = characters.filter(
       (character) =>
@@ -27,16 +32,19 @@ export default async function Search() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="p-4 border rounded-lg shadow-md">
       <input
         value={search}
         onChange={handleChange}
         type="search"
         placeholder="Search by name or house"
+        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
-      {filterCharacters.map((character) => (
-        <HomePage key={character.id} character={character} />
-      ))}
+      <div className="grid gap-4 mt-4">
+        {filterCharacters.map((character) => (
+          <HomePage key={character.id} character={character} />
+        ))}
+      </div>
     </form>
   );
 }
