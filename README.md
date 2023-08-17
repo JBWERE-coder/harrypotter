@@ -4,7 +4,7 @@ This project is a frontend web application built with Next.js that utilizes data
 # Technologies Used
 Next.js 13 (with App Router)
 TailwindCSS
-Features
+# Features
 # Character List
 The homepage displays a list of Harry Potter characters, showing their names and Dates of Birth obtained from the Harry Potter Public API.
 #C haracter Details
