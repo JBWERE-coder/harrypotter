@@ -14,9 +14,9 @@ The app provides a search bar allowing users to search for characters by name or
 * Stylish Design
 The app is styled using TailwindCSS to achieve an attractive and consistent design. Responsive design techniques ensure optimal performance across various devices and orientations.
 # Installation
-1.Clone the repository to your local machine
-2.Install the project dependencies - npm install
-3.Run the development server - npm run dev
+* Clone the repository to your local machine
+* Install the project dependencies - npm install
+* Run the development server - npm run dev
 
 # License
 This project is licensed under the MIT License.
