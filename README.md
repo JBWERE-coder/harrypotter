@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Harry Potter Next.js App
+This project is a frontend web application built with Next.js that utilizes data from the Harry Potter Public API to create an interactive and user-friendly experience for Harry Potter enthusiasts. The app features a list of Harry Potter characters displayed on the homepage, with the ability to view detailed information about each character, search for specific characters, and enjoy a visually appealing design using TailwindCSS.
+# Technologies Used
+* Next.js 13 (with App Router)
+* TailwindCSS
+# Features
+* Character List
+The homepage displays a list of Harry Potter characters, showing their names and Dates of Birth obtained from the Harry Potter Public API.
+* Character Details
+Clicking on a character card navigates the user to a details page where comprehensive information about the selected character is displayed, including their name, role, house, wand, etc.
+* Search Functionality
+The app provides a search bar allowing users to search for characters by name or house. Search results are displayed in the card list.
+* Stylish Design
+The app is styled using TailwindCSS to achieve an attractive and consistent design. Responsive design techniques ensure optimal performance across various devices and orientations.
+# Installation
+* Clone the repository to your local machine
+* Install the project dependencies - npm install
+* Run the development server - npm run dev
 
-First, run the development server:
+# License
+This project is licensed under the MIT License.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Author: JACOB WERE
+* Email: LUTHERWERE@GMAIL.COM
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
