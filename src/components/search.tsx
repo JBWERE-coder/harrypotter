@@ -32,7 +32,7 @@ export default function Search() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 border rounded-lg shadow-md">
+    <form onSubmit={handleSubmit} >
       <input
         value={search}
         onChange={handleChange}
