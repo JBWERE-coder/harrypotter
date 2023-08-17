@@ -24,6 +24,8 @@ export default async function Character({params}:{params:{id:string}}){
         <p>{characterdetails[0].house}</p>
         <p>{characterdetails[0].dateOfBirth}</p>
         <p>{characterdetails[0].eyeColour}</p>
+        <p>{characterdetails[0].hairColour}</p>
+        <p>{characterdetails[0].alternate_names}</p>
 
        </div>
         
