@@ -3,7 +3,6 @@ import { baseUrl } from "@/constants"
 import { CharactersInterface } from "@/app/model"
 import Image from "next/image"
 
-fetch('url')
 const getSingleCharacter = async (id:string) =>{
     const response = await axios(`${baseUrl}/character/${id}`)
     console.log(response)
