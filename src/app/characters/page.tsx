@@ -1,7 +1,7 @@
 import axios from "axios"
 import { baseUrl } from "@/constants"
 import { CharactersInterface } from "../model"
-import HomePage from "../pages/homepage/page"
+import HomePage from "../homepage/page"
 
 export const getCharacters = async () =>{
     try{
