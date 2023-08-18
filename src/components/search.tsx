@@ -1,10 +1,9 @@
 "use client"
 import { ChangeEvent, useRef, useState } from "react";
 import { CharactersInterface } from "@/app/model";
-import HomePage from "@/app/pages/homepage/page";
 import { getCharacters } from "@/app/characters/page";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+
 
 async function fetchCharacters() {
   const characters: CharactersInterface[] = await getCharacters();
@@ -38,10 +37,8 @@ export default function Search() {
       setResultsVisibility(true);
       return;
     }
-
     setFilterCharacters([]);
     setResultsVisibility(false);
-
   };
   const router = useRouter();
   const handleNavigate = (navigate:string) => {
@@ -50,29 +47,34 @@ export default function Search() {
     setResultsVisibility(false);
 }
 
-  return (
-    <form onSubmit={handleChange} >
-      <input
-        ref={searchRef}
-      //  value={search}
-        onChange={handleChange}
-        type="search"
-        placeholder="Search by name or house"
-        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-      />
+ 
 
-      {filterCharacters?.length >0 && (
-        <div className="grid gap-4 mt-4 absolute top-6">
+  return (
+    <div className="relative">
+      <form onSubmit={handleChange}>
+        <input
+          ref={searchRef}
+          onChange={handleChange}
+          type="search"
+          placeholder="Search by name or house"
+          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </form>
+
+      {resultsVisibility && (
+        <div className="grid gap-4 mt-2 absolute z-10 top-full left-0 w-full bg-white shadow-md rounded-lg">
           {filterCharacters.map((character) => (
-          // <HomePage key={character.id} character={character} />
-          <div onClick={()=> handleNavigate(character.id)} className="flex flex-1 flex-col p-4 bg-white shadow-md rounded-lg" >
-          <p>{character.name}</p>
-          <p>{character.house}</p>
-        </div>
+            <div
+              key={character.id}
+              onClick={() => handleNavigate(character.id)}
+              className="flex flex-1 flex-col p-4 cursor-pointer"
+            >
+               <p>{character.name}</p>
+              <p>{character.house}</p>
+            </div>
           ))}
         </div>
-
       )}
-    </form>
+    </div>
   );
 }

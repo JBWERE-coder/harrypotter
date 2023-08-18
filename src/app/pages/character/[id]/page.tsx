@@ -3,6 +3,7 @@ import { baseUrl } from "@/constants"
 import { CharactersInterface } from "@/app/model"
 import Image from "next/image"
 
+
 const getSingleCharacter = async (id:string) =>{
     const response = await axios(`${baseUrl}/character/${id}`)
     console.log(response)
@@ -17,7 +18,7 @@ export default async function Character({params}:{params:{id:string}}){
         
        <Image src={characterdetails[0].image} width={400} height={600} alt={characterdetails[0].name}/>
        <div>
-        <p>{characterdetails[0].actor}</p>
+        <p>{characterdetails[0].name}</p>
         <p>{characterdetails[0].ancestry}</p> 
         <p>{characterdetails[0].gender}</p>
         <p>{characterdetails[0].hogwartsStaff}</p>
@@ -28,5 +29,5 @@ export default async function Character({params}:{params:{id:string}}){
         <p>{characterdetails[0].alternate_names}</p>
 
        </div>
-    </div>
+    </div>      
 }
