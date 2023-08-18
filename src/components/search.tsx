@@ -15,11 +15,6 @@ export default function Search() {
   const [resultsVisibility, setResultsVisibility] = useState<boolean>(false);
   const [filterCharacters, setFilterCharacters] = useState<CharactersInterface[]>([]);
   const searchRef = useRef("");
-
-  // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-  //   setSearch(event.target.value);
-  // };
-
   const handleChange = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
