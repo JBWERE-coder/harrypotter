@@ -28,6 +28,5 @@ export default async function Character({params}:{params:{id:string}}){
         <p>{characterdetails[0].alternate_names}</p>
 
        </div>
-        
     </div>
 }
