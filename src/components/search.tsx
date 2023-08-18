@@ -38,7 +38,7 @@ export default function Search() {
   };
   const router = useRouter();
   const handleNavigate = (navigate:string) => {
-     router.push(`/pages/character/${navigate}`);
+     router.push(`/character/${navigate}`);
     searchRef.current.value = '';
     setResultsVisibility(false);
 }
